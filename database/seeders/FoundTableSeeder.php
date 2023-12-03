@@ -23,7 +23,7 @@ class FoundTableSeeder extends Seeder
                 'description' => 'Laptop berwarna silver',
                 'category' => 'Elektronik',
                 'brand' => 'Asus',
-                'where_foound' => 'Gedung GKU',
+                'where_found' => 'Gedung GKU',
                 'detail_loc' => 'Sekitar lobi gedung GKU',
 
             ],
@@ -36,7 +36,7 @@ class FoundTableSeeder extends Seeder
                 'description' => 'Dengan strap kulit berwarna coklat',
                 'category' => 'Barang pribadi',
                 'brand' => 'Casio',
-                'where_foound' => 'Mushola Gedung FIT lantai 2',
+                'where_found' => 'Mushola Gedung FIT lantai 2',
                 'detail_loc' => 'Di tempat wudhu',
 
             ],
@@ -49,7 +49,7 @@ class FoundTableSeeder extends Seeder
                 'description' => 'Dengan casing berwarna biru',
                 'category' => 'Barang pribadi',
                 'brand' => 'Iphone',
-                'where_foound' => 'Open Library',
+                'where_found' => 'Open Library',
                 'detail_loc' => 'Area library cafe',
 
             ],

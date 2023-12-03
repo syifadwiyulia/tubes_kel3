@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Losts;
 
-class ArticleController extends Controller
+class LostsController extends Controller
 {
     public function index(Request $request) {
         /* menggunakan eloquent */

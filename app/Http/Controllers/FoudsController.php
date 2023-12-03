@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Models\Founds;
 
-class FoudsController extends Controller
+class ArticleController extends Controller
 {
-    public function index(Request $request) 
-    $founds = Founds::all();
+    public function index(Request $request) {
+        /* menggunakan eloquent */
+        $founds = Founds::all();
 
         return view('founds.index', [
             'founds' => $founds]);
     }
+}
