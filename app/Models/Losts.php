@@ -14,11 +14,12 @@ class Losts extends Model
         'name',
         'photo',
         'items',
-        'date_found',
+        'date_lost',
+        'time_lost',
         'description',
         'category',
         'brand',
-        'where_found',
+        'lost_place',
         'detail_loc',
     ];
 }

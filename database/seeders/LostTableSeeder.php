@@ -56,5 +56,7 @@ class LostTableSeeder extends Seeder
 
             ],
         ];
+        Losts::truncate();
+        Losts::insert($losts);
     }
 }

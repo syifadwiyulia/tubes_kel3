@@ -16,12 +16,12 @@ return new class extends Migration
             $table->string('name', 100);
             $table->string('photo');
             $table->string('items', 100);
-            $table->date('date_found');
-            $table->dateTime('time_found', $precision = 0);
+            $table->date('date_lost');
+            $table->dateTime('time_lost', $precision = 0);
             $table->text('description');
             $table->string('category', 100);
             $table->string('brand', 200);
-            $table->string('where_found', 200);
+            $table->string('lost_place', 200);
             $table->string('detail_loc', 200);
             $table->timestamps();
         });

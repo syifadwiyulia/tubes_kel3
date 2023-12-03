@@ -19,7 +19,6 @@ Route::get('/', function () {
 
 // Route::get('/login', [App\Http\Controllers\AuthController::class, 'login']);
 
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -29,3 +28,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('/losts', [LostsController::class, 'index'])->name('losts');
