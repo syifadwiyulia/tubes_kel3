@@ -12,4 +12,3 @@ class FoudsController extends Controller
         return view('founds.index', [
             'founds' => $founds]);
     }
-
