@@ -8,14 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Founds extends Model
 {
     use HasFactory;
-    protected $table = 'found';
+    protected $table = 'founds';
     protected $primaryKey = 'id';
     protected $fillable = [
         'name',
         'photo',
         'items',
         'date_found',
-        'time_found',
         'description',
         'category',
         'brand',

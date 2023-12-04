@@ -9,7 +9,7 @@
 <style>
 
 .wrapper {
-    width: 1100px;
+    width: 1300px;
     margin: auto;
     position: relative;
 }

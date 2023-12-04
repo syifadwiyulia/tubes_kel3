@@ -15,7 +15,6 @@ class Losts extends Model
         'photo',
         'items',
         'date_lost',
-        'time_lost',
         'description',
         'category',
         'brand',

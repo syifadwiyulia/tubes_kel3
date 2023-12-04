@@ -16,8 +16,7 @@ return new class extends Migration
             $table->string('name', 100);
             $table->string('photo');
             $table->string('items', 100);
-            $table->date('date_found');
-            $table->dateTime('time_found', $precision = 0);
+            $table->date('date_found', $precision = 0);
             $table->text('description');
             $table->string('category', 100);
             $table->string('brand', 200);
