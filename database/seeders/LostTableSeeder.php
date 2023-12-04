@@ -18,7 +18,7 @@ class LostTableSeeder extends Seeder
         $losts = [
             [
                 'name' => 'Siti Bilqis',
-                'photo' => 'https://analisadaily.com/imagesfile/202305/20230515-102506_asus-expertbook-b9-laptop-ringan-di-bawah-1kg.jpeg' ,
+                'photo' => 'https://jateng.disway.id/upload/873454143f10e311bffd62213706ce0b.jpg',
                 'items' => 'Laptop',
                 'date_lost' => Carbon::now(),
                 'description' => 'Laptop berwarna silver',

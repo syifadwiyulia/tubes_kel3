@@ -36,7 +36,7 @@
         @foreach ($losts as $losts)
         <tr>
             <td>{{ $losts->name }}</td>
-            <td><img src="{{ $losts->photo }}" height="90" width="90" class="card-img-top" alt="..."></td>
+            <td><img src="{{ $losts->photo }}" height="100" width="100" class="card-img-top" alt="..."></td>
             <td>{{ $losts->items }}</td>
             <td>{{ $losts->date_lost }}</td>
             <td>{{ $losts->description }}</td>
