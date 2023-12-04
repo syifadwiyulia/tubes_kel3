@@ -33,7 +33,7 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <a href="/article" class="btn btn-secondary">Kembali</a>
+            <a href="/founds" class="btn btn-secondary">Kembali</a>
         </div>
     </div>
 </div>

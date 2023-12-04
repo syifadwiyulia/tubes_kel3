@@ -45,9 +45,9 @@
             <td>{{ $founds->where_found }}</td>
             <td>{{ $founds->detail_loc }}</td>
             <td class="col-3 text-center">
-                <a href="/losts/{{ $losts->id }}" class="btn btn-outline-primary btn-sm">Detail</a>
-                <a href="/edit-losts/{{  $losts->id }}" class="btn btn-outline-primary btn-sm">Ubah</a>
-                <a href="/delete-losts/{{  $losts->id }}" class="btn btn-outline-primary btn-sm">Hapus</a>
+                <a href="/founds/{{ $founds->id }}" class="btn btn-outline-primary btn-sm">Detail</a>
+                <a href="/edit-founds/{{  $founds->id }}" class="btn btn-outline-primary btn-sm">Ubah</a>
+                <a href="/delete-founds/{{  $founds->id }}" class="btn btn-outline-primary btn-sm">Hapus</a>
             </td>
         </tr>
         @endforeach

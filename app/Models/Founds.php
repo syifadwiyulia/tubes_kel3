@@ -11,7 +11,7 @@ class Founds extends Model
     protected $table = 'founds';
     protected $primaryKey = 'id';
     protected $fillable = [
-        'name',
+        'name',  
         'photo',
         'items',
         'date_found',

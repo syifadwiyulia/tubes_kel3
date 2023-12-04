@@ -19,7 +19,7 @@ class FoundsController extends Controller
 
     public function detail($id) {
         /* menggunakan eloquent */
-        $founds = founds::find($id)->first();
+        $founds = Founds::find($id)->first();
         return view('founds.detail',['founds' => $founds]);
     }
 

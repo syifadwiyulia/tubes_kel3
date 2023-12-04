@@ -18,7 +18,7 @@ class FoundTableSeeder extends Seeder
     {
         $founds = [
             [
-                'name' => 'Siti Bilqis',
+                'name' => 'Rizki',
                 'photo' => 'https://analisadaily.com/imagesfile/202305/20230515-102506_asus-expertbook-b9-laptop-ringan-di-bawah-1kg.jpeg',
                 'items' => 'Laptop',
                 'date_found' => Carbon::now(),
@@ -27,10 +27,10 @@ class FoundTableSeeder extends Seeder
                 'brand' => 'Asus',
                 'where_found' => 'Gedung GKU',
                 'detail_loc' => 'Sekitar lobi gedung GKU',
-
+     
             ],
             [
-                'name' => 'Nimas Ayu',
+                'name' => 'Jonathan',
                 'photo' => 'https://www.blibli.com/friends-backend/wp-content/uploads/2022/07/Apa-Saja-Sih-Tipe-Jam-Tangan-Casio.jpg',
                 'items' => 'Jam tangan',
                 'date_found' => Carbon::now(),
@@ -42,7 +42,7 @@ class FoundTableSeeder extends Seeder
 
             ],
             [
-                'name' => 'Ayu',
+                'name' => 'Marcell',
                 'photo' => 'https://ae01.alicdn.com/kf/S7ce1785244cc4ed1a8e17b6adf45c439j.jpg?width=800&height=800&hash=1600',
                 'items' => 'Handphone',
                 'date_found' => Carbon::now(),
