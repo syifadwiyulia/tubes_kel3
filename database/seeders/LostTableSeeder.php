@@ -10,9 +10,6 @@ use App\Models\Losts;
 
 class LostTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         $losts = [

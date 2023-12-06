@@ -11,47 +11,31 @@ use App\Models\Founds;
 
 class FoundTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
+    
     public function run(): void
     {
         $founds = [
             [
-                'name' => 'Rizki',
-                'photo' => 'https://analisadaily.com/imagesfile/202305/20230515-102506_asus-expertbook-b9-laptop-ringan-di-bawah-1kg.jpeg',
-                'items' => 'Laptop',
-                'date_found' => Carbon::now(),
-                'description' => 'Laptop berwarna silver',
-                'category' => 'Elektronik',
-                'brand' => 'Asus',
-                'where_found' => 'Gedung GKU',
-                'detail_loc' => 'Sekitar lobi gedung GKU',
-     
-            ],
-            [
                 'name' => 'Jonathan',
-                'photo' => 'https://www.blibli.com/friends-backend/wp-content/uploads/2022/07/Apa-Saja-Sih-Tipe-Jam-Tangan-Casio.jpg',
-                'items' => 'Jam tangan',
+                'photo' => 'https://s3.ap-southeast-1.amazonaws.com/moladin.assets/blog/wp-content/uploads/2020/03/09065942/Kunci-Motor-Hilang-Simak-5-Hal-yang-Mesti-Dilakukan.-saibumi.jpg',
+                'items' => 'Kunci Motor',
                 'date_found' => Carbon::now(),
-                'description' => 'Dengan strap kulit berwarna coklat',
-                'category' => 'Barang pribadi',
-                'brand' => 'Casio',
-                'where_found' => 'Mushola Gedung FIT lantai 2',
-                'detail_loc' => 'Di tempat wudhu',
-
+                'description' => 'Kunci motor honda vario',
+                'category' => 'Barang Pribadi',
+                'brand' => 'Honda',
+                'where_found' => 'Parkiran GKU',
+                'detail_loc' => 'Dekat pos satpam',
             ],
             [
-                'name' => 'Marcell',
-                'photo' => 'https://ae01.alicdn.com/kf/S7ce1785244cc4ed1a8e17b6adf45c439j.jpg?width=800&height=800&hash=1600',
+                'name' => 'Rizki',
+                'photo' => 'https://awsimages.detik.net.id/community/media/visual/2020/11/10/iphone-12-2_169.jpeg?w=1200',
                 'items' => 'Handphone',
                 'date_found' => Carbon::now(),
-                'description' => 'Dengan casing berwarna biru',
-                'category' => 'Barang pribadi',
+                'description' => 'Iphone 12 warna putih tanpa case',
+                'category' => 'Elektronik',
                 'brand' => 'Iphone',
-                'where_found' => 'Open Library',
-                'detail_loc' => 'Area library cafe',
-
+                'where_found' => 'Gedung FIT',
+                'detail_loc' => 'kamar mandi pria lantai 1',
             ],
         ];
         Founds::truncate();

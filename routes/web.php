@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LostsController;
 use App\Http\Controllers\FoundsController;
+use App\Http\Controllers\TestimonialsController;
+use App\Models\Testimonials;
 use App\Models\Losts;
 use App\Models\Founds;
 
@@ -51,3 +53,12 @@ Route::get('/add-founds', [FoundsController::class, 'new']);
 Route::post('/founds', [FoundsController::class, 'store']);
 Route::get('/delete-founds/{id}', [FoundsController::class, 'delete']);
 Route::delete('/founds/{id}', [FoundsController::class, 'destroy']);
+
+Route::get('/testimonials', [TestimonialsController::class, 'index'])->name('testimonials');
+Route::get('/testimonials/{id}', [TestimonialsController::class, 'detail']);
+Route::get('/edit-testimonials/{id}', [TestimonialsController::class, 'edit']);
+Route::put('/testimonials/{id}', [TestimonialsController::class, 'update']);
+Route::get('/add-testimonials', [TestimonialsController::class, 'new']);
+Route::post('/testimonials', [TestimonialsController::class, 'store']);
+Route::get('/delete-testimonials/{id}', [TestimonialsController::class, 'delete']);
+Route::delete('/testimonials/{id}', [TestimonialsController::class, 'destroy']);
