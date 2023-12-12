@@ -145,7 +145,7 @@
             <div class="row mb-3">
                 <div class="col-4">
                         <button type="submit" class="btn btn-success mb-3">Perbarui</button>
-                    <a href="/article" class="btn btn-secondary mb-3">Kembali</a>
+                    <a href="/losts" class="btn btn-secondary mb-3">Kembali</a>
                 </div>
             </div>
         </form>

@@ -24,7 +24,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/login', [App\Http\Controllers\AuthController::class, 'login']);
+Route::get('/login', [App\Http\Controllers\AuthController::class, 'login']);
 
 Route::middleware([
     'auth:sanctum',
