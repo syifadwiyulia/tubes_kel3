@@ -16,12 +16,14 @@ return new class extends Migration
             $table->string('name', 100);
             $table->string('photo');
             $table->string('items', 100);
-            $table->date('date_found', $precision = 0);
+            $table->datetime('date_found', $precision = 0);
             $table->text('description');
-            $table->string('category', 100);
+            $table->enum('category',['Clothing','Electronics','Personal Items','Documents and Identifications','Other Personal Items','Vehicles']);
             $table->string('brand', 200);
-            $table->string('where_found', 200);
+            $table->string('contact', 15);
+            $table->enum('where_found', ['Selaru Building (FIT)','Manterawu Building (FEB)','Sebatik Building (FIK)','Tokong Nanas Building','FIT Building Parking','Open Library','Syamsul Ulum Mosque']);
             $table->string('detail_loc', 200);
+            $table->int('status');
             $table->timestamps();
         });
     }

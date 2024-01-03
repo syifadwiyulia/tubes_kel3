@@ -6,10 +6,10 @@
     <form method="post" action="/founds/{{ $founds->id }}">
         @csrf
         @method('delete')
-        <div class="mt-5">
+        <div class="mt-5"> 
             <p>Apakah Anda yakin akan menghapus barang <b>{{ $founds->items }}</b>? </p>
             <button type="submit" class="btn btn-danger mb-3">Ya</button>
-            <a href="/losts" class="btn btn-secondary mb-3">Tidak</a>
+            <a href="/admin.index" class="btn btn-secondary mb-3">Tidak</a>
         </div>
     </form>
 @endsection

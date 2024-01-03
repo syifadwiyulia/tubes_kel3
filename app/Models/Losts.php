@@ -17,8 +17,18 @@ class Losts extends Model
         'date_lost',
         'description',
         'category',
+        'contact',
         'brand',
         'lost_place',
         'detail_loc',
+        'keterangan',
     ];
+
+    public function getPhoto()
+    {
+        if(!$this->photo){
+            return asset('build/assets/img/black.jpeg');
+        }
+        return asset('img/'.$this->photo);
+    }
 }

@@ -9,17 +9,17 @@ use Illuminate\Support\Facades\Session;
 
 class FoundsController extends Controller
 {
-    public function index(Request $request) {
-        /* menggunakan eloquent */
-        $founds = Founds::all();
+            public function index(Request $request) {
+                /* menggunakan eloquent */
+                $founds = Founds::all();
 
-        return view('founds.index', [
-            'founds' => $founds]);
-    }
+                return view('founds.index', [
+                    'founds' => $founds]);
+            }
 
     public function detail($id) {
         /* menggunakan eloquent */
-        $founds = Founds::find($id)->first();
+        $founds = Founds::find($id);
         return view('founds.detail',['founds' => $founds]);
     }
 
@@ -36,28 +36,44 @@ class FoundsController extends Controller
 
         $founds->update($request->all());
 
-        if($founds) {
-            Session::flash('status', 'success');
-            Session::flash('message', 'Pengubahan data berhasil');
+        if($request->hasFile('photo')){
+            $request->file('photo')->move('img/',$request->file('photo')->getClientOriginalName());
+            $founds->photo = $request->file('photo')->getClientOriginalName();
+            $founds->save();
         }
 
-        return redirect('/founds'); 
+        return redirect('/founds/'.$id)->withSuccess('Data Changed Successfully');
     }
 
     public function new()
     {
-        return view('founds.new');
+        return view('founds.new');  
     }
 
     public function store(Request $request)
     {
-        $founds = Founds::create($request->all());
-        if ($founds) {
-            Session::flash('status', 'success');
-            Session::flash('message', 'Penambahan data berhasil');
-        }
+        //$founds = Founds::create($request->all());
 
-        return redirect('/founds');
+        //dd($request);
+        $founds = new \App\Models\Founds();
+        $founds->name = $request->name;
+        $founds->photo = $request->photo;
+        $founds->items = $request->items;
+        $founds->date_found = $request->date_found;
+        $founds->description = $request->description;
+        $founds->category = $request->category;
+        $founds->brand = $request->brand;
+        $founds->where_found = $request->where_found;
+        $founds->detail_loc = $request->detail_loc;
+        $founds->contact = $request->contact;
+        $founds->keterangan = 'not yet returned';
+        if($request->hasFile('photo')){
+            $request->file('photo')->move('img/',$request->file('photo')->getClientOriginalName());
+            $founds->photo = $request->file('photo')->getClientOriginalName();
+            $founds->save();
+        }
+        $founds->save();
+        return redirect('/founds')->withSuccess('Data Added Successfully!');
     }
 
     public function delete($id)
@@ -70,11 +86,6 @@ class FoundsController extends Controller
     {
         $founds = Founds::findOrFail($id);
         $founds->delete();
-
-        if ($founds) {
-            Session::flash('status', 'success');
-            Session::flash('message', 'Penghapusan data kategori ' . $founds->name . ' berhasil');
-        }
-        return redirect('/founds');
+        return redirect('/homepageadmin');
     }
 }

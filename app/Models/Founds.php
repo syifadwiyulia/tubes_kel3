@@ -18,7 +18,17 @@ class Founds extends Model
         'description',
         'category',
         'brand',
+        'contact',
         'where_found',
         'detail_loc',
+        'keterangan'
     ];
+    
+    public function getPhoto()
+    {
+        if(!$this->photo){
+            return asset('build/assets/img/black.jpeg');
+        }
+        return asset('img/'.$this->photo);
+    }
 }

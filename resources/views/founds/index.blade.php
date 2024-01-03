@@ -1,57 +1,63 @@
 @extends('layouts.mainlayout')
 @section('page_title','Daftar Barang Ditemukan')
-
 @section('content')
-
-<div class="row justify-content-between my-3">
-    <div class="col-6">
-        <h2>Daftar Barang Ditemukan</h2>
-    </div>
-    <div class="col-2">
-        <a href="/add-items" class="btn btn-primary">Tambah Data</a>
-    </div>
+<style>
+    .btn{
+        background-color: #f0f0f0;
+        margin-left: 35px;
+        width: 200px;
+    }
+    
+    .containerrecent2{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+    }
+     
+    .card-img-top{
+        margin-left: 25px;
+        margin-top: 25px;
+        width: 250px;
+        height: 200px;
+    }
+    
+    .card-text{
+        margin-left: 10px;
+    }
+    
+        </style>
+<div class="catalog-section" style="display: flex; align-items: center; margin-left:5%">
+  <a href="/lostandfound"><img src="{{asset('admin/assets/img/toggle.png')}}" class="mx-4"></a> 
+  <div>
+    <h4 class="mt-3">CATALOG FOUND ITEMS</h4>
+    <p>Find your lost items here!</p>
+  </div>
 </div>
-
-@if (Session::has('status'))
-    <div class="alert alert-success" role="alert">
-        {{ Session::get('message') }}
-    </div>
-@endif
-
-<table class="table" border="1">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Photo</th>
-            <th>Items</th>
-            <th>Date Found</th>
-            <th>Description</th>
-            <th>Category</th>
-            <th>Brand</th>
-            <th>Where Found</th>
-            <th>Detail Location</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ($founds as $founds)
-        <tr>
-            <td>{{ $founds->name }}</td>
-            <td><img src="{{ $founds->photo }}" height="90" width="90" class="card-img-top" alt="..."></td>
-            <td>{{ $founds->items }}</td>
-            <td>{{ $founds->date_found }}</td>
-            <td>{{ $founds->description }}</td>
-            <td>{{ $founds->category }}</td>
-            <td>{{ $founds->brand }}</td>
-            <td>{{ $founds->where_found }}</td>
-            <td>{{ $founds->detail_loc }}</td>
-            <td class="col-3 text-center">
-                <a href="/founds/{{ $founds->id }}" class="btn btn-outline-primary btn-sm">Detail</a>
-                <a href="/edit-founds/{{  $founds->id }}" class="btn btn-outline-primary btn-sm">Ubah</a>
-                <a href="/delete-founds/{{  $founds->id }}" class="btn btn-outline-primary btn-sm">Hapus</a>
-            </td>
-        </tr>
+    <div class="containerrecent">
+      @foreach($founds as $found) 
+      @if ($found->keterangan === 'not yet returned')
+        <div class="row">
+          <div class="col-md-2 mt-5 mx-4">
+            <div class="card" style="width: 300px;">
+              <img src="{{ $found->getPhoto() }}" class="card-img-top rounded" alt="jam">
+              <div class="card-body" style="font-size: small;">
+                <h4 class="card-title text-center">{{$found->items}}</h4>
+                <div class="card-text">Date Reported: {{$found->date_found}} </div>
+                    <div class="card-text"> Description: {{$found->description}} </div>
+                    <div class="card-text"> Category: {{$found->category}}</div>
+                    @if ($found ->keterangan == 'not yet returned')
+                    <div class="card-text text-danger"> Status: not yet returned</div>
+                    @else 
+                    <div class="card-text text-primary"> Status: has been returned</div>
+                    @endif
+                <button type="button" class="btn mt-4 text-secondary"> <a href="/founds/{{$found->id}}" style="text-decoration: none;">See details</a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        @endif
         @endforeach
-    </tbody>
-</table>
-
+    </div>
 @endsection

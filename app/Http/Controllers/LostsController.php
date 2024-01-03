@@ -19,7 +19,7 @@ class LostsController extends Controller
 
     public function detail($id) {
         /* menggunakan eloquent */
-        $losts = losts::find($id)->first();
+        $losts = losts::find($id);
         return view('losts.detail',['losts' => $losts]);
     }
 
@@ -31,17 +31,18 @@ class LostsController extends Controller
 
     public function update(Request $request, $id)
     {
-        // dd($request->all());
+        //dd($request->all());
         $losts = Losts::findOrFail($id);
 
         $losts->update($request->all());
 
-        if($losts) {
-            Session::flash('status', 'success');
-            Session::flash('message', 'Pengubahan data berhasil');
+        if($request->hasFile('photo')){
+            $request->file('photo')->move('img/',$request->file('photo')->getClientOriginalName());
+            $losts->photo = $request->file('photo')->getClientOriginalName();
+            $losts->save();
         }
 
-        return redirect('/losts'); 
+        return redirect('/losts/'.$id)->withSuccess('Data Changed Successfully');
     }
 
     public function new()
@@ -51,13 +52,25 @@ class LostsController extends Controller
 
     public function store(Request $request)
     {
-        $losts = Losts::create($request->all());
-        if ($losts) {
-            Session::flash('status', 'success');
-            Session::flash('message', 'Penambahan data berhasil');
+        $losts = new \App\Models\Losts();
+        $losts->name = $request->name;
+        $losts->photo = $request->photo;
+        $losts->items = $request->items;
+        $losts->date_lost = $request->date_lost;
+        $losts->description = $request->description;
+        $losts->category = $request->category;
+        $losts->brand = $request->brand;
+        $losts->lost_place = $request->lost_place;
+        $losts->detail_loc = $request->detail_loc;
+        $losts->contact = $request->contact;
+        $losts->keterangan = 'not yet found';
+        if($request->hasFile('photo')){
+            $request->file('photo')->move('img/',$request->file('photo')->getClientOriginalName());
+            $losts->photo = $request->file('photo')->getClientOriginalName();
+            $losts->save();
         }
-
-        return redirect('/losts');
+        $losts->save();
+        return redirect('/founds')->withSuccess('Data Added Successfully!');;;
     }
 
     public function delete($id)
@@ -70,11 +83,6 @@ class LostsController extends Controller
     {
         $losts = Losts::findOrFail($id);
         $losts->delete();
-
-        if ($losts) {
-            Session::flash('status', 'success');
-            Session::flash('message', 'Penghapusan data kategori ' . $losts->name . ' berhasil');
-        }
-        return redirect('/losts');
+        return redirect('/homepageadmin');
     }
 }
